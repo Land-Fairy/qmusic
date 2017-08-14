@@ -15,6 +15,8 @@ class Footer : public QWidget
 public:
     Footer(QWidget *parent = 0);
 
+    QSlider *slider;
+
 protected:
     void paintEvent(QPaintEvent *);
 
@@ -25,7 +27,6 @@ private:
     DImageButton *playButton;
     DImageButton *pauseButton;
     DImageButton *nextButton;
-    QSlider *slider;
 };
 
 #endif // FOOTER_H

@@ -1,6 +1,6 @@
 #include "main_window.h"
 #include <dtitlebar.h>
-#include <QDebug>
+#include <QTime>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent)
@@ -33,6 +33,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(mainWidget);
 
+    /* search event*/
+
     connect(tb->searchEdit, &QLineEdit::returnPressed, this, [=]{
         interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
@@ -56,5 +58,28 @@ MainWindow::MainWindow(QWidget *parent)
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         player->setMedia(QUrl(songUrls.at(interFace->searchPage->list->currentRow())));
         player->play();
+    });
+
+    /* MediaPlay event*/
+    connect(player, &Player::durationChanged, this, [=](qint64 duration) {
+        QTime time(0, 0, 0);
+        time = time.addMSecs(duration);
+
+        footer->slider->setRange(0, duration);
+    });
+
+    connect(player, &Player::positionChanged, this, [=](qint64 position) {
+        QTime time(0, 0, 0);
+        time = time.addMSecs(position);
+
+        footer->slider->setValue(position);
+    });
+
+    /* footer slider event*/
+    connect(footer->slider, &QSlider::sliderMoved, this, [=] {
+        player->setPosition(footer->slider->value());
+    });
+    connect(footer->slider, &QSlider::sliderPressed, this, [=] {
+        player->setPosition(footer->slider->value());
     });
 }
