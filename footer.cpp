@@ -12,7 +12,8 @@ Footer::Footer(QWidget *parent)
     nextButton = new DImageButton(":/images/next-normal.png", ":/images/next-hover.png",":/images/next-press.png");
     slider = new QSlider(Qt::Horizontal);
 
-    slider->setFixedWidth(parentWidget()->width() / 2);
+    slider->setFixedWidth(parentWidget()->width());
+    slider->setFixedHeight(7);
 
     layout->addSpacing(20);
     layout->addWidget(prevButton);

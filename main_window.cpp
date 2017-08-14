@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     tb = new TitleBar();
 
     if (titlebar()) {
+        tb->searchEdit->setFixedWidth(width() / 2);
         titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
         titlebar()->setSeparatorVisible(true);
     }

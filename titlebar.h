@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 class TitleBar : public QWidget
 {
@@ -10,6 +11,8 @@ class TitleBar : public QWidget
 
 public:
     TitleBar(QWidget *parent = 0);
+
+    QLineEdit *searchEdit;
 
 private:
     QHBoxLayout *layout;

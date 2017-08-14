@@ -1,14 +1,12 @@
 QToolBar {
     border: none;
 }
-
 QToolBar::separator {
     height: 1px;
     background-color: #E2E2E2;
     margin-top: 10px;
     margin-bottom: 5px;
 }
-
 QToolButton {
     border: none;
     color: #4C4C4C;
@@ -17,11 +15,9 @@ QToolButton {
     margin-left: 20px;
     margin-right: 20px;
 }
-
 QToolButton:hover {
     background-color: #EDEDEE;
 }
-
 QToolButton:checked {
     border-left: none;
     border-right: 3px solid #00C17F;
@@ -30,4 +26,19 @@ QToolButton:checked {
     background-color: #00C17F;
     color: #FFFFFF;
     font-size: 16px;
+}
+
+
+QSlider::add-page:Horizontal {
+    background-color: rgb(202, 202, 202, 95);
+}
+QSlider::sub-page:Horizontal {
+    background-color: rgb(0, 193, 127);
+}
+QSlider::groove:Horizontal {
+    background: transparent;
+}
+QSlider::handle:Horizontal {
+    height: 30px;
+    width:8px;
 }

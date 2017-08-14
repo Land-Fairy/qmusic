@@ -2,6 +2,7 @@
 <RCC version="1.0">
     <qresource prefix="/">
         <file>qss/style.qss</file>
+        <file>images/logo.tiff</file>
         <file>images/next-normal.png</file>
         <file>images/next-hover.png</file>
         <file>images/next-press.png</file>
