@@ -17,13 +17,16 @@ HEADERS += main_window.h \
     interface.h \
     footer.h \
     titlebar.h \
-    player.h
+    player.h \
+    api/qqmusic_api.h
+
 SOURCES += main.cpp main_window.cpp \
     navigation.cpp \
     utils.cpp \
     interface.cpp \
     footer.cpp \
     titlebar.cpp \
-    player.cpp
+    player.cpp \
+    api/qqmusic_api.cpp
 
 RESOURCES += resources.qrc
