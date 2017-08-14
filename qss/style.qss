@@ -1,3 +1,7 @@
+QToolBar {
+    border: none;
+}
+
 QToolButton {
     border: none;
 }
