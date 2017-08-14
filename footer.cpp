@@ -14,7 +14,11 @@ Footer::Footer(QWidget *parent)
     slider = new QSlider(Qt::Horizontal);
     display = new QLabel("");
     duration = new QLabel("00:00");;
-    position = new QLabel("00:00");;
+    position = new QLabel(" / 00:00");;
+
+    position->setVisible(false);
+    duration->setVisible(false);
+    display->setVisible(false);
 
     slider->setFixedWidth(parentWidget()->width());
     slider->setFixedHeight(6);
@@ -22,7 +26,6 @@ Footer::Footer(QWidget *parent)
     hlayout->addWidget(display);
     hlayout->addStretch();
     hlayout->addWidget(position);
-    hlayout->addWidget(new QLabel("/"));
     hlayout->addWidget(duration);
 
     vlayout->addStretch();
