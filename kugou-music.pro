@@ -11,5 +11,7 @@ CONFIG += c++11 link_pkgconfig
 PKGCONFIG += dtkwidget
 
 # Input
-HEADERS += main_window.h
-SOURCES += main.cpp main_window.cpp
+HEADERS += main_window.h \
+    navigation.h
+SOURCES += main.cpp main_window.cpp \
+    navigation.cpp
