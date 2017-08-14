@@ -7,8 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
     layout = new QVBoxLayout();
     hlayout = new QHBoxLayout();
     navigation = new Navigation();
+    interFace = new InterFace();
 
     hlayout->addWidget(navigation);
+    hlayout->addWidget(interFace);
 
     layout->addLayout(hlayout);
 
