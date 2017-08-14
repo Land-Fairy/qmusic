@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     hlayout->addWidget(navigation);
     hlayout->addWidget(interFace);
 
+    layout->setMargin(0);
+    layout->setSpacing(0);
     layout->addLayout(hlayout);
 
     mainWidget->setLayout(layout);
