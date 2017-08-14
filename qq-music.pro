@@ -16,12 +16,14 @@ HEADERS += main_window.h \
     utils.h \
     interface.h \
     footer.h \
-    titlebar.h
+    titlebar.h \
+    player.h
 SOURCES += main.cpp main_window.cpp \
     navigation.cpp \
     utils.cpp \
     interface.cpp \
     footer.cpp \
-    titlebar.cpp
+    titlebar.cpp \
+    player.cpp
 
 RESOURCES += resources.qrc
