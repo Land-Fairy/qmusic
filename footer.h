@@ -3,6 +3,10 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
+#include <dimagebutton.h>
+#include <QSlider>
+
+DWIDGET_USE_NAMESPACE
 
 class Footer : public QWidget
 {
@@ -16,6 +20,12 @@ protected:
 
 private:
     QHBoxLayout *layout;
+
+    DImageButton *prevButton;
+    DImageButton *playButton;
+    DImageButton *pauseButton;
+    DImageButton *nextButton;
+    QSlider *slider;
 };
 
 #endif // FOOTER_H
