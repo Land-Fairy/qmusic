@@ -4,7 +4,7 @@ QToolBar {
 
 QToolBar::separator {
     height: 1px;
-    background-color: #CCCCCC;
+    background-color: #E2E2E2;
     margin-top: 10px;
     margin-bottom: 0px;
 }
