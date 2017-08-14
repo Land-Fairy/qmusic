@@ -25,7 +25,7 @@ Navigation::Navigation(QWidget *parent)
         group->addButton(btn);
         toolBar->addWidget(btn);
 
-        if (i == 1)
+        if (i == 0)
             btn->setChecked(true);
     }
 
