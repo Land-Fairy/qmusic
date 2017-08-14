@@ -22,6 +22,11 @@ public:
     QLabel *duration;
     QLabel *position;
 
+    DImageButton *prevButton;
+    DImageButton *playButton;
+    DImageButton *pauseButton;
+    DImageButton *nextButton;
+
 protected:
     void paintEvent(QPaintEvent *);
 
@@ -29,11 +34,6 @@ private:
     QHBoxLayout *layout;
     QVBoxLayout *vlayout;
     QHBoxLayout *hlayout;
-
-    DImageButton *prevButton;
-    DImageButton *playButton;
-    DImageButton *pauseButton;
-    DImageButton *nextButton;
 };
 
 #endif // FOOTER_H

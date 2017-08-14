@@ -77,11 +77,22 @@ MainWindow::MainWindow(QWidget *parent)
         footer->position->setText(time.toString("mm:ss"));
     });
 
-    connect(player, &Player::stateChanged, this, [=](QMediaPlayer::State newStatus) {
-        if (newStatus == QMediaPlayer::PlayingState) {
-            //切换到暂停
-        } else {
+    connect(footer->playButton, &DImageButton::clicked, this, [=] {
+        if (player->state() == QMediaPlayer::PlayingState)
+            player->pause();
+        else
+            player->play();
+    });
 
+    connect(player, &Player::stateChanged, this, [=](QMediaPlayer::State status) {
+        if (status == QMediaPlayer::PlayingState) {
+            footer->playButton->setNormalPic(":/images/pause-normal.png");
+            footer->playButton->setHoverPic(":/images/pause-hover.png");
+            footer->playButton->setPressPic(":/images/pause-press.png");
+        } else {
+            footer->playButton->setNormalPic(":/images/play-normal.png");
+            footer->playButton->setHoverPic(":/images/play-hover.png");
+            footer->playButton->setPressPic(":/images/play-press.png");
         }
     });
 

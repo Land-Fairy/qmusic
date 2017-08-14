@@ -6,8 +6,3 @@ Player::Player()
 
     setPlaylist(playList);
 }
-
-bool Player::status()
-{
-    return state() == QMediaPlayer::PlayingState;
-}

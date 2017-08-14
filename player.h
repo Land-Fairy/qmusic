@@ -12,8 +12,6 @@ public:
     Player();
 
     QMediaPlaylist *playList;
-
-    bool status();
 };
 
 #endif // PLAYER_H
