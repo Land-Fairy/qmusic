@@ -1,6 +1,7 @@
 #include "navigation.h"
 #include <QButtonGroup>
 #include <QToolButton>
+#include <QDebug>
 
 Navigation::Navigation(QWidget *parent)
     : QWidget(parent)
@@ -11,9 +12,7 @@ Navigation::Navigation(QWidget *parent)
     toolBar->setOrientation(Qt::Vertical);
 
     QStringList list;
-    list << QStringLiteral("首页");
-    list << QStringLiteral("排行");
-    list << QStringLiteral("本地歌曲");
+    list << QStringLiteral("首页") << QStringLiteral("排行") << QStringLiteral("本地歌曲");
 
     QButtonGroup *group = new QButtonGroup();
 
@@ -30,4 +29,11 @@ Navigation::Navigation(QWidget *parent)
     }
 
     layout->addWidget(toolBar);
+
+    connect(group, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
+}
+
+void Navigation::buttonClicked(int index)
+{
+    qDebug() << index;
 }

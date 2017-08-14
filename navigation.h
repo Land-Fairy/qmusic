@@ -15,6 +15,9 @@ public:
 private:
     QVBoxLayout *layout;
     QToolBar *toolBar;
+
+private slots:
+    void buttonClicked(int index);
 };
 
 #endif // NAVIGATION_H
