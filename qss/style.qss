@@ -4,13 +4,14 @@ QToolBar {
 
 QToolButton {
     border: none;
+    color: #6D6D6D;
 }
 
 QToolButton:checked {
-    border-left: 2px solid rgb(244, 76, 76);
+    border-left: 2px solid #0C8ED9;
     border-right: none;
     border-top: none;
     border-bottom: none;
-    background-color: rgb(244, 76, 76, 50);
-    color: rgb(244, 76, 76);
+    background-color: #0C8ED9;
+    color: #FFFFFF;
 }

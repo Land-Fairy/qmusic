@@ -39,7 +39,7 @@ void Navigation::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#EFEFEF"));
+    painter.setBrush(QColor("#2C323B"));
     painter.drawRect(rect());
 }
 
