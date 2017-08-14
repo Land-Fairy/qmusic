@@ -17,7 +17,7 @@ Navigation::Navigation(QWidget *parent)
     layout->setMargin(0);
 
     QStringList list;
-    list << QStringLiteral("推荐") << QStringLiteral("电台") << QStringLiteral("排行") << QStringLiteral("本地歌曲") << QStringLiteral("播放历史");
+    list << QStringLiteral("音乐库") << QStringLiteral("MV") << QStringLiteral("电台") << QStringLiteral("本地歌曲") << QStringLiteral("播放历史");
 
     QButtonGroup *group = new QButtonGroup();
 
@@ -27,23 +27,23 @@ Navigation::Navigation(QWidget *parent)
             label->setStyleSheet("QLabel {"
                                  "margin-top: 10px;"
                                  "margin-bottom: 5px;"
-                                 "margin-left: 10px;"
+                                 "margin-left: 20px;"
                                  "color: #A9A9A9;"
                                  "}");
             toolBar->addWidget(label);
-            toolBar->addSeparator();
+            //toolBar->addSeparator();
         }
 
         if (i == 3) {
             QLabel *label = new QLabel("我的音乐");
             label->setStyleSheet("QLabel {"
                                  "margin-top: 20px;"
-                                 "margin-bottom: 0px;"
-                                 "margin-left: 10px;"
+                                 "margin-bottom: 5px;"
+                                 "margin-left: 20px;"
                                  "color: #A9A9A9;"
                                  "}");
             toolBar->addWidget(label);
-            toolBar->addSeparator();
+            //toolBar->addSeparator();
         }
 
         QToolButton *btn = new QToolButton();

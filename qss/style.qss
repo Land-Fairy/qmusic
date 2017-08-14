@@ -6,15 +6,16 @@ QToolBar::separator {
     height: 1px;
     background-color: #E2E2E2;
     margin-top: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
 }
 
 QToolButton {
     border: none;
     color: #4C4C4C;
-    font-size: 20px;
-
-    padding-left: -50px;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 QToolButton:hover {
@@ -23,10 +24,10 @@ QToolButton:hover {
 
 QToolButton:checked {
     border-left: none;
-    border-right: 3px solid #2CA7F8;
+    border-right: 3px solid #00C17F;
     border-top: none;
     border-bottom: none;
-    background-color: #D5EDFE;
-    color: #2CA7F8;
-    font-size: 20px;
+    background-color: #00C17F;
+    color: #FFFFFF;
+    font-size: 16px;
 }
