@@ -12,6 +12,8 @@ PKGCONFIG += dtkwidget
 
 # Input
 HEADERS += main_window.h \
-    navigation.h
+    navigation.h \
+    utils.h
 SOURCES += main.cpp main_window.cpp \
-    navigation.cpp
+    navigation.cpp \
+    utils.cpp
