@@ -2,5 +2,17 @@
 <RCC version="1.0">
     <qresource prefix="/">
         <file>qss/style.qss</file>
+        <file>images/next-normal.png</file>
+        <file>images/next-hover.png</file>
+        <file>images/next-press.png</file>
+        <file>images/pause-normal.png</file>
+        <file>images/pause-hover.png</file>
+        <file>images/pause-press.png</file>
+        <file>images/play-normal.png</file>
+        <file>images/play-hover.png</file>
+        <file>images/play-press.png</file>
+        <file>images/previous-normal.png</file>
+        <file>images/previous-hover.png</file>
+        <file>images/previous-press.png</file>
     </qresource>
 </RCC>
