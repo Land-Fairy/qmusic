@@ -2,16 +2,27 @@ QToolBar {
     border: none;
 }
 
+QToolBar::separator {
+    height: 1px;
+    background-color: #CCCCCC;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 QToolButton {
     border: none;
-    color: #6D6D6D;
+    color: #4C4C4C;
+    font-size: 20px;
+
+    padding-left: -50px;
 }
 
 QToolButton:checked {
-    border-left: 2px solid #0C8ED9;
-    border-right: none;
+    border-left: none;
+    border-right: 3px solid #2CA7F8;
     border-top: none;
     border-bottom: none;
-    background-color: #0C8ED9;
-    color: #FFFFFF;
+    background-color: #D5EDFE;
+    color: #2CA7F8;
+    font-size: 20px;
 }
