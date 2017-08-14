@@ -8,6 +8,7 @@
 #include "footer.h"
 #include "titlebar.h"
 #include "./api/qqmusic_api.h"
+#include "player.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -28,6 +29,7 @@ private:
     TitleBar *tb;
 
     QQMusicAPI *api;
+    Player *player;
 
     QList<QString> names;
     QList<QString> songUrls;
