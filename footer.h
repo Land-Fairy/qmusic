@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <dimagebutton.h>
 #include <QSlider>
+#include <QLabel>
 
 DWIDGET_USE_NAMESPACE
 
@@ -17,11 +18,17 @@ public:
 
     QSlider *slider;
 
+    QLabel *display;
+    QLabel *duration;
+    QLabel *position;
+
 protected:
     void paintEvent(QPaintEvent *);
 
 private:
     QHBoxLayout *layout;
+    QVBoxLayout *vlayout;
+    QHBoxLayout *hlayout;
 
     DImageButton *prevButton;
     DImageButton *playButton;

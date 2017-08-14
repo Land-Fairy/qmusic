@@ -58,6 +58,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         player->setMedia(QUrl(songUrls.at(interFace->searchPage->list->currentRow())));
         player->play();
+
+        footer->display->setText(names.at(interFace->searchPage->list->currentRow()));
     });
 
     /* MediaPlay event*/
@@ -66,6 +68,7 @@ MainWindow::MainWindow(QWidget *parent)
         time = time.addMSecs(duration);
 
         footer->slider->setRange(0, duration);
+        footer->duration->setText(time.toString("mm:ss"));
     });
 
     connect(player, &Player::positionChanged, this, [=](qint64 position) {
@@ -73,6 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
         time = time.addMSecs(position);
 
         footer->slider->setValue(position);
+        footer->position->setText(time.toString("mm:ss"));
     });
 
     /* footer slider event*/
