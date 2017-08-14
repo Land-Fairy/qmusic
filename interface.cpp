@@ -4,7 +4,10 @@
 InterFace::InterFace(QWidget *parent)
     : QWidget(parent)
 {
-    layout = new QVBoxLayout(this);
+    layout = new QStackedLayout(this);
+    searchPage = new SearchPage();
+
+    layout->addWidget(searchPage);
 }
 
 void InterFace::paintEvent(QPaintEvent *)

@@ -7,6 +7,7 @@
 #include "interface.h"
 #include "footer.h"
 #include "titlebar.h"
+#include "./api/qqmusic_api.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -25,6 +26,12 @@ private:
     InterFace *interFace;
     Footer *footer;
     TitleBar *tb;
+
+    QQMusicAPI *api;
+
+    QList<QString> names;
+    QList<QString> songUrls;
+    QList<QString> imageUrls;
 };
 
 #endif

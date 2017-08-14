@@ -2,7 +2,8 @@
 #define INTERFACE_H
 
 #include <QWidget>
-#include <QVBoxLayout>
+#include <QStackedLayout>
+#include "./widgets/search_page.h"
 
 class InterFace : public QWidget
 {
@@ -11,10 +12,13 @@ class InterFace : public QWidget
 public:
     InterFace(QWidget *parent = 0);
 
+    SearchPage *searchPage;
+
 protected:
     void paintEvent(QPaintEvent *);
+
 private:
-    QVBoxLayout *layout;
+    QStackedLayout *layout;
 };
 
 #endif // INTERFACE_H
