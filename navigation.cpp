@@ -2,6 +2,7 @@
 #include <QButtonGroup>
 #include <QToolButton>
 #include <QDebug>
+#include <QPainter>
 
 Navigation::Navigation(QWidget *parent)
     : QWidget(parent)
@@ -31,6 +32,15 @@ Navigation::Navigation(QWidget *parent)
     layout->addWidget(toolBar);
 
     connect(group, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
+}
+
+void Navigation::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor("#EFEFEF"));
+    painter.drawRect(rect());
 }
 
 void Navigation::buttonClicked(int index)

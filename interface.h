@@ -11,6 +11,8 @@ class InterFace : public QWidget
 public:
     InterFace(QWidget *parent = 0);
 
+protected:
+    void paintEvent(QPaintEvent *);
 private:
     QVBoxLayout *layout;
 };

@@ -12,6 +12,9 @@ class Navigation : public QWidget
 public:
     Navigation(QWidget *parent = 0);
 
+protected:
+    void paintEvent(QPaintEvent *);
+
 private:
     QVBoxLayout *layout;
     QToolBar *toolBar;
