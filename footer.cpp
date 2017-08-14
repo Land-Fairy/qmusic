@@ -6,7 +6,7 @@ Footer::Footer(QWidget *parent)
 {
     layout = new QHBoxLayout(this);
 
-    setFixedHeight(parentWidget()->height() / 4 - 30);
+    setFixedHeight(parentWidget()->height() / 4 - 45);
 }
 
 void Footer::paintEvent(QPaintEvent *)

@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (titlebar()) {
         titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
+        titlebar()->setSeparatorVisible(true);
     }
 
     hlayout->addWidget(navigation);
