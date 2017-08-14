@@ -6,6 +6,7 @@
 #include "navigation.h"
 #include "interface.h"
 #include "footer.h"
+#include "titlebar.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -23,6 +24,7 @@ private:
     Navigation *navigation;
     InterFace *interFace;
     Footer *footer;
+    TitleBar *tb;
 };
 
 #endif

@@ -1,4 +1,5 @@
 #include "main_window.h"
+#include <dtitlebar.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent)
@@ -9,6 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
     navigation = new Navigation(this);
     interFace = new InterFace();
     footer = new Footer(this);
+    tb = new TitleBar();
+
+    if (titlebar()) {
+        titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
+    }
 
     hlayout->addWidget(navigation);
     hlayout->addWidget(interFace);

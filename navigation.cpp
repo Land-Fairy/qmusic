@@ -75,4 +75,22 @@ void Navigation::paintEvent(QPaintEvent *)
 void Navigation::buttonClicked(int index)
 {
     qDebug() << index;
+
+    switch (index) {
+    case -2:
+        qDebug() << "推荐";
+        break;
+    case -3:
+        qDebug() << "电台";
+        break;
+    case -4:
+        qDebug() << "排行";
+        break;
+    case -5:
+        qDebug() << "本地歌曲";
+        break;
+    case -6:
+        qDebug() << "历史播放";
+        break;
+    }
 }
