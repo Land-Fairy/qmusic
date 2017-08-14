@@ -11,7 +11,7 @@ Navigation::Navigation(QWidget *parent)
     layout = new QVBoxLayout(this);
     toolBar = new QToolBar();
 
-    setFixedWidth(parentWidget()->width() / 3);
+    setFixedWidth(parentWidget()->width() / 3.5);
 
     toolBar->setOrientation(Qt::Vertical);
     layout->setMargin(0);
@@ -48,7 +48,7 @@ Navigation::Navigation(QWidget *parent)
 
         QToolButton *btn = new QToolButton();
         btn->setText(list.at(i));
-        btn->setFixedHeight(40);
+        btn->setFixedHeight(35);
         btn->setFixedWidth(width());
         btn->setCheckable(true);
         group->addButton(btn);

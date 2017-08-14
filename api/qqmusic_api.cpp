@@ -49,7 +49,7 @@ void QQMusicAPI::search(const QString &keyword, const int &page)
     query.addQueryItem("catZhida", "1");
     query.addQueryItem("format", "json");
     query.addQueryItem("p", QString::number(page));
-    query.addQueryItem("n", "20");
+    query.addQueryItem("n", "50");
     query.addQueryItem("w", keyword);
     url.setQuery(query.toString(QUrl::FullyEncoded));
 

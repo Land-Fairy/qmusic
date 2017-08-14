@@ -1,6 +1,7 @@
 #include "main_window.h"
 #include <dtitlebar.h>
 #include <QTime>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent)
@@ -34,7 +35,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(mainWidget);
 
     /* search event*/
-
     connect(tb->searchEdit, &QLineEdit::returnPressed, this, [=]{
         interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
@@ -77,6 +77,18 @@ MainWindow::MainWindow(QWidget *parent)
 
         footer->slider->setValue(position);
         footer->position->setText(time.toString("mm:ss"));
+    });
+
+    connect(player, &Player::stateChanged, this, [=](QMediaPlayer::State newStatus) {
+        if (newStatus == QMediaPlayer::PlayingState) {
+            //切换到暂停
+        } else {
+
+        }
+    });
+
+    connect(player, &Player::mediaStatusChanged, this, [=](QMediaPlayer::MediaStatus status) {
+        qDebug() << status;
     });
 
     /* footer slider event*/
