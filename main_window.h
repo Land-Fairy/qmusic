@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include "navigation.h"
 #include "interface.h"
+#include "footer.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -21,6 +22,7 @@ private:
     QHBoxLayout *hlayout;
     Navigation *navigation;
     InterFace *interFace;
+    Footer *footer;
 };
 
 #endif

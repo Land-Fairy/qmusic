@@ -14,10 +14,12 @@ PKGCONFIG += dtkwidget
 HEADERS += main_window.h \
     navigation.h \
     utils.h \
-    interface.h
+    interface.h \
+    footer.h
 SOURCES += main.cpp main_window.cpp \
     navigation.cpp \
     utils.cpp \
-    interface.cpp
+    interface.cpp \
+    footer.cpp
 
 RESOURCES += resources.qrc
