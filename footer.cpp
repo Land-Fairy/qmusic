@@ -15,39 +15,33 @@ Footer::Footer(QWidget *parent)
     cover = new QLabel();
     display = new QLabel("");
     duration = new QLabel("00:00");;
-    position = new QLabel(" / 00:00");;
+    position = new QLabel("/00:00");;
 
-    cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(45, 45));
+    cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
     position->setVisible(false);
     duration->setVisible(false);
     display->setVisible(false);
 
-    slider->setFixedWidth(parentWidget()->width());
-    slider->setFixedHeight(6);
+    slider->setFixedHeight(4);
 
-    hlayout->addWidget(display);
-    hlayout->addStretch();
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
 
     vlayout->addStretch();
+    vlayout->addWidget(display);
     vlayout->addLayout(hlayout);
-    vlayout->addSpacing(5);
-    vlayout->addWidget(slider);
-    vlayout->addSpacing(5);
     vlayout->addStretch();
 
-    layout->addSpacing(20);
+    layout->addWidget(cover);
+    layout->addSpacing(10);
+    layout->addLayout(vlayout);
+    layout->addStretch();
     layout->addWidget(prevButton);
     layout->addSpacing(10);
     layout->addWidget(playButton);
     layout->addSpacing(10);
     layout->addWidget(nextButton);
-    layout->addStretch();
-    layout->addWidget(cover);
-    layout->addSpacing(10);
-    layout->addLayout(vlayout);
     layout->addStretch();
 
     setFixedHeight(parentWidget()->height() / 4 - 45);

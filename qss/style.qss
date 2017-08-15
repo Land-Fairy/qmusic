@@ -30,7 +30,7 @@ QToolButton:checked {
 
 
 QSlider::add-page:Horizontal {
-    background-color: rgb(202, 202, 202, 95);
+    background-color: #FFFFFF;
 }
 QSlider::sub-page:Horizontal {
     background-color: rgb(0, 193, 127);
