@@ -16,5 +16,9 @@
         <file>images/previous-hover.png</file>
         <file>images/previous-press.png</file>
         <file>images/gedan_cover_default.png</file>
+
+        <file>images/mute.png</file>
+        <file>images/volume-normal.png</file>
+        <file>images/volume-hover.png</file>
     </qresource>
 </RCC>

@@ -23,7 +23,7 @@ Footer::Footer(QWidget *parent)
     duration->setVisible(false);
     display->setVisible(false);
 
-    slider->setFixedHeight(4);
+    slider->setFixedHeight(7);
 
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
@@ -55,6 +55,6 @@ void Footer::paintEvent(QPaintEvent *)
     painter.setBrush(QColor("#FFFFFF"));
     painter.drawRect(rect());
 
-    painter.setBrush(QColor("#E2E2E2"));
-    painter.drawRect(QRect(0, 0, rect().width(), 1));
+    //painter.setBrush(QColor("#E2E2E2"));
+    //painter.drawRect(QRect(0, 0, rect().width(), 1));
 }
