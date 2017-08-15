@@ -30,13 +30,14 @@ Footer::Footer(QWidget *parent)
     display->setVisible(false);
 
     slider->setFixedHeight(5);
-    slider->setFixedWidth(parentWidget()->width());
+    slider->setFixedWidth(parentWidget()->width() - (parentWidget()->width() / 3));
 
     hlayout->addWidget(display);
     hlayout->addStretch();
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
 
+    vlayout->setMargin(0);
     vlayout->addStretch();
     vlayout->addLayout(hlayout);
     vlayout->addWidget(slider);

@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         MainWindow w;
         w.show();
         w.setWindowTitle("QQ音乐");
-        w.setMinimumHeight(qApp->desktop()->height() / 1.7);
+        w.setFixedSize(qApp->desktop()->width() / 1.8, qApp->desktop()->height() / 1.7);
 
         Dtk::Widget::moveToCenter(&w);
 
