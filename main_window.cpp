@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     player->setPlaylist(playlist);
 
     if (titlebar()) {
-        tb->searchEdit->setFixedWidth(width() / 2);
+        tb->searchEdit->setFixedWidth(width());
         titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
         titlebar()->setSeparatorVisible(true);
     }

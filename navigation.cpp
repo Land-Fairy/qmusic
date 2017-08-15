@@ -46,7 +46,7 @@ Navigation::Navigation(QWidget *parent)
 
         QToolButton *btn = new QToolButton();
         btn->setText(list.at(i));
-        btn->setFixedHeight(35);
+        btn->setFixedHeight(30);
         btn->setFixedWidth(width());
         btn->setCheckable(true);
         group->addButton(btn);

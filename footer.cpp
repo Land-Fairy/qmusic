@@ -12,9 +12,12 @@ Footer::Footer(QWidget *parent)
     pauseButton = new DImageButton(":/images/pause-normal.png", ":/images/pause-hover.png",":/images/pause-press.png");
     nextButton = new DImageButton(":/images/next-normal.png", ":/images/next-hover.png",":/images/next-press.png");
     slider = new QSlider(Qt::Horizontal);
+    cover = new QLabel();
     display = new QLabel("");
     duration = new QLabel("00:00");;
     position = new QLabel(" / 00:00");;
+
+    cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(45, 45));
 
     position->setVisible(false);
     duration->setVisible(false);
@@ -32,6 +35,7 @@ Footer::Footer(QWidget *parent)
     vlayout->addLayout(hlayout);
     vlayout->addSpacing(5);
     vlayout->addWidget(slider);
+    vlayout->addSpacing(5);
     vlayout->addStretch();
 
     layout->addSpacing(20);
@@ -41,6 +45,8 @@ Footer::Footer(QWidget *parent)
     layout->addSpacing(10);
     layout->addWidget(nextButton);
     layout->addStretch();
+    layout->addWidget(cover);
+    layout->addSpacing(10);
     layout->addLayout(vlayout);
     layout->addStretch();
 

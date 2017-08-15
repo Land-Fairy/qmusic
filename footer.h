@@ -16,11 +16,11 @@ class Footer : public QWidget
 public:
     Footer(QWidget *parent = 0);
 
-    QSlider *slider;
-
     QLabel *display;
     QLabel *duration;
     QLabel *position;
+    QLabel *cover;
+    QSlider *slider;
 
     DImageButton *prevButton;
     DImageButton *playButton;

@@ -15,5 +15,6 @@
         <file>images/previous-normal.png</file>
         <file>images/previous-hover.png</file>
         <file>images/previous-press.png</file>
+        <file>images/gedan_cover_default.png</file>
     </qresource>
 </RCC>
