@@ -12,17 +12,15 @@ MainWindow::MainWindow(QWidget *parent)
     navigation = new Navigation(this);
     interFace = new InterFace();
     footer = new Footer(this);
-    tb = new TitleBar();
-    api = new QQMusicAPI();
+    tb = new TitleBar(this);
+    api = new QQMusicAPI(this);
     player = new QMediaPlayer(this);
     playlist = new QMediaPlaylist();
-
-    navigation->setGeometry(0, 0, 200, 605);
 
     player->setPlaylist(playlist);
 
     if (titlebar()) {
-        tb->searchEdit->setFixedWidth(width());
+        tb->searchEdit->setFixedWidth(width() - 150);
         titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
         titlebar()->setSeparatorVisible(true);
     }
@@ -48,7 +46,6 @@ MainWindow::MainWindow(QWidget *parent)
 
         interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
-
     });
 
     connect(api, &QQMusicAPI::searchList, this, [=](QString name, QString url, QString image_url){

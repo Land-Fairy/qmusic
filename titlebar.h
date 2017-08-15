@@ -14,8 +14,6 @@ public:
 
     QLineEdit *searchEdit;
 
-private:
-    QHBoxLayout *layout;
 };
 
 #endif // TITLEBAR_H
