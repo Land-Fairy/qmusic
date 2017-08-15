@@ -138,6 +138,6 @@ MainWindow::MainWindow(QWidget *parent)
         playlist->previous();
     });
     connect(footer->nextButton, &DImageButton::clicked, this, [=] {
-        playlist->previous();
+        playlist->next();
     });
 }
