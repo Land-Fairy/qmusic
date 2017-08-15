@@ -20,9 +20,10 @@ MainWindow::MainWindow(QWidget *parent)
     player->setPlaylist(playlist);
 
     if (titlebar()) {
-        tb->searchEdit->setFixedWidth(width() - 150);
+        tb->searchEdit->setFixedWidth(width() / 3 + width() / 3);
         titlebar()->setCustomWidget(tb, Qt::AlignHCenter, false);
         titlebar()->setSeparatorVisible(true);
+        titlebar()->setWindowFlags(titlebar()->windowFlags() &~ Qt::WindowMaximizeButtonHint);
     }
 
     hlayout->addWidget(navigation);
