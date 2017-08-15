@@ -121,7 +121,6 @@ MainWindow::MainWindow(QWidget *parent)
 
             footer->display->setText(names.at(interFace->searchPage->list->currentRow()));
         }
-        qDebug() << status;
     });
 
     /* footer slider event*/

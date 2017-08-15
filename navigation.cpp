@@ -27,11 +27,10 @@ Navigation::Navigation(QWidget *parent)
             label->setStyleSheet("QLabel {"
                                  "margin-top: 10px;"
                                  "margin-bottom: 5px;"
-                                 "margin-left: 20px;"
+                                 "margin-left: 15px;"
                                  "color: #A9A9A9;"
                                  "}");
             toolBar->addWidget(label);
-            //toolBar->addSeparator();
         }
 
         if (i == 3) {
@@ -39,11 +38,10 @@ Navigation::Navigation(QWidget *parent)
             label->setStyleSheet("QLabel {"
                                  "margin-top: 20px;"
                                  "margin-bottom: 5px;"
-                                 "margin-left: 20px;"
+                                 "margin-left: 15px;"
                                  "color: #A9A9A9;"
                                  "}");
             toolBar->addWidget(label);
-            //toolBar->addSeparator();
         }
 
         QToolButton *btn = new QToolButton();
