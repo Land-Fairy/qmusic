@@ -6,7 +6,9 @@ TitleBar::TitleBar(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *layout = new QHBoxLayout(this);
-    searchEdit = new QLineEdit();
+    searchEdit = new DSearchEdit();
+
+    searchEdit->setPlaceHolder("搜索");
 
     QLabel *logo = new QLabel();
     logo->setPixmap(QPixmap(":/images/logo.png").scaled(20, 20));
@@ -18,7 +20,7 @@ TitleBar::TitleBar(QWidget *parent)
     layout->addSpacing(parentWidget()->width() / 3.5 - 40);
     layout->addStretch();
     layout->addWidget(searchEdit);
+    layout->addSpacing(20);
 
     searchEdit->setFixedHeight(25);
-    searchEdit->setFixedWidth(280);
 }

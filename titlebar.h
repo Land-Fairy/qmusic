@@ -3,7 +3,9 @@
 
 #include <QWidget>
 #include <QHBoxLayout>
-#include <QLineEdit>
+#include <dsearchedit.h>
+
+DWIDGET_USE_NAMESPACE
 
 class TitleBar : public QWidget
 {
@@ -12,7 +14,7 @@ class TitleBar : public QWidget
 public:
     TitleBar(QWidget *parent = 0);
 
-    QLineEdit *searchEdit;
+    DSearchEdit *searchEdit;
 
 };
 

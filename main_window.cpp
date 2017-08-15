@@ -39,7 +39,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(mainWidget);
 
     /* search event*/
-    connect(tb->searchEdit, &QLineEdit::returnPressed, this, [=]{
+    connect(tb->searchEdit, &DSearchEdit::returnPressed, this, [=]{
         names.clear();
         songUrls.clear();
         imageUrls.clear();
