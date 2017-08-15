@@ -10,7 +10,7 @@ QToolBar::separator {
 QToolButton {
     border: none;
     color: #4C4C4C;
-    font-size: 16px;
+    font-size: 15px;
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -25,7 +25,7 @@ QToolButton:checked {
     border-bottom: none;
     background-color: #00C17F;
     color: #FFFFFF;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
