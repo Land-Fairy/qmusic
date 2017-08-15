@@ -11,12 +11,14 @@ Footer::Footer(QWidget *parent)
     playButton = new DImageButton(":/images/play-normal.png", ":/images/play-hover.png",":/images/play-press.png");
     pauseButton = new DImageButton(":/images/pause-normal.png", ":/images/pause-hover.png",":/images/pause-press.png");
     nextButton = new DImageButton(":/images/next-normal.png", ":/images/next-hover.png",":/images/next-press.png");
+    volumeButton = new DImageButton();
     slider = new QSlider(Qt::Horizontal);
     cover = new QLabel();
     display = new QLabel("");
     duration = new QLabel("00:00");;
     position = new QLabel("/00:00");;
 
+    volumeButton->setNormalPic(":/images/volume-normal.png");
     cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
     position->setVisible(false);
@@ -27,6 +29,7 @@ Footer::Footer(QWidget *parent)
 
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
+    hlayout->addStretch();
 
     vlayout->addStretch();
     vlayout->addWidget(display);
@@ -43,8 +46,13 @@ Footer::Footer(QWidget *parent)
     layout->addSpacing(10);
     layout->addWidget(nextButton);
     layout->addStretch();
+    layout->addWidget(volumeButton);
+    layout->addWidget(new QLabel("哈哈哈"));
+    layout->addWidget(new QLabel("哈哈哈"));
+    layout->addWidget(new QLabel("哈哈哈"));
+    layout->addSpacing(10);
 
-    setFixedHeight(parentWidget()->height() / 4 - 45);
+    setFixedHeight(70);
 }
 
 void Footer::paintEvent(QPaintEvent *)
@@ -52,7 +60,7 @@ void Footer::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#FFFFFF"));
+    painter.setBrush(QColor("#F6F6F6"));
     painter.drawRect(rect());
 
     //painter.setBrush(QColor("#E2E2E2"));

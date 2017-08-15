@@ -33,7 +33,7 @@ QSlider {
     border-bottom: 1px solid #E2E2E2;
 }
 QSlider::add-page:Horizontal {
-    background-color: #FFFFFF;
+    background-color: #F6F6F6;
 }
 QSlider::sub-page:Horizontal {
     background-color: rgb(0, 193, 127);

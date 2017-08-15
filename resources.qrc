@@ -20,5 +20,8 @@
         <file>images/mute.png</file>
         <file>images/volume-normal.png</file>
         <file>images/volume-hover.png</file>
+
+        <file>images/mute.tiff</file>
+        <file>images/volume.tiff</file>
     </qresource>
 </RCC>

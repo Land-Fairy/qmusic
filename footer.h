@@ -26,6 +26,7 @@ public:
     DImageButton *playButton;
     DImageButton *pauseButton;
     DImageButton *nextButton;
+    DImageButton *volumeButton;
 
 protected:
     void paintEvent(QPaintEvent *);

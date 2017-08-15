@@ -17,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     player = new QMediaPlayer(this);
     playlist = new QMediaPlaylist();
 
+    navigation->setGeometry(0, 0, 200, 605);
+
     player->setPlaylist(playlist);
 
     if (titlebar()) {
