@@ -14,7 +14,10 @@ MainWindow::MainWindow(QWidget *parent)
     footer = new Footer(this);
     tb = new TitleBar();
     api = new QQMusicAPI();
-    player = new Player();
+    player = new QMediaPlayer(this);
+    playlist = new QMediaPlaylist();
+
+    player->setPlaylist(playlist);
 
     if (titlebar()) {
         tb->searchEdit->setFixedWidth(width() / 2);
@@ -39,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
         names.clear();
         songUrls.clear();
         imageUrls.clear();
+        playlist->clear();
 
         interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
@@ -49,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent)
         names << name;
         songUrls << url;
         imageUrls << image_url;
+        playlist->addMedia(QUrl(url));
 
         interFace->searchPage->list->addItem(name);
     });
@@ -56,14 +61,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
 
-        if (!songUrls[current].isEmpty())
-            prevUrils = songUrls.at(current);
-
-        player->setMedia(QUrl(prevUrils));
+        playlist->setCurrentIndex(current);
     });
 
     /* MediaPlay event*/
-    connect(player, &Player::durationChanged, this, [=](qint64 duration) {
+    connect(player, &QMediaPlayer::durationChanged, this, [=](qint64 duration) {
         QTime time(0, 0, 0);
         time = time.addMSecs(duration);
 
@@ -71,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
         footer->duration->setText("/ " + time.toString("mm:ss"));
     });
 
-    connect(player, &Player::positionChanged, this, [=](qint64 position) {
+    connect(player, &QMediaPlayer::positionChanged, this, [=](qint64 position) {
         QTime time(0, 0, 0);
         time = time.addMSecs(position);
 
@@ -86,7 +88,7 @@ MainWindow::MainWindow(QWidget *parent)
             player->play();
     });
 
-    connect(player, &Player::stateChanged, this, [=](QMediaPlayer::State status) {
+    connect(player, &QMediaPlayer::stateChanged, this, [=](QMediaPlayer::State status) {
         if (status == QMediaPlayer::PlayingState) {
             footer->playButton->setNormalPic(":/images/pause-normal.png");
             footer->playButton->setHoverPic(":/images/pause-hover.png");
@@ -98,7 +100,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
 
-    connect(player, &Player::mediaStatusChanged, this, [=](QMediaPlayer::MediaStatus status) {
+    connect(player, &QMediaPlayer::mediaStatusChanged, this, [=](QMediaPlayer::MediaStatus status) {
         if (status == QMediaPlayer::LoadingMedia) {
             footer->display->setVisible(true);
             footer->position->setVisible(false);
@@ -119,7 +121,7 @@ MainWindow::MainWindow(QWidget *parent)
             footer->duration->setVisible(true);
             footer->display->setVisible(true);
 
-            footer->display->setText(names.at(interFace->searchPage->list->currentRow()));
+            footer->display->setText(names.at(playlist->currentIndex()));
         }
     });
 
@@ -129,5 +131,13 @@ MainWindow::MainWindow(QWidget *parent)
     });
     connect(footer->slider, &QSlider::sliderPressed, this, [=] {
         player->setPosition(footer->slider->value());
+    });
+
+    /* footer button event */
+    connect(footer->prevButton, &DImageButton::clicked, this, [=] {
+        playlist->previous();
+    });
+    connect(footer->nextButton, &DImageButton::clicked, this, [=] {
+        playlist->previous();
     });
 }

@@ -12,8 +12,8 @@ QToolButton {
     color: #4C4C4C;
     font-size: 16px;
     text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 QToolButton:hover {
     background-color: #EDEDEE;

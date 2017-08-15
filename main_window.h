@@ -3,12 +3,13 @@
 
 #include <DMainWindow>
 #include <QVBoxLayout>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 #include "navigation.h"
 #include "interface.h"
 #include "footer.h"
 #include "titlebar.h"
 #include "./api/qqmusic_api.h"
-#include "player.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -29,11 +30,11 @@ private:
     TitleBar *tb;
 
     QQMusicAPI *api;
-    Player *player;
+    QMediaPlayer *player;
+    QMediaPlaylist *playlist;
 
     QStringList names;
     QStringList songUrls;
-    QString prevUrils;
     QStringList imageUrls;
 };
 

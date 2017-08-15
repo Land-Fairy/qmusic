@@ -17,7 +17,6 @@ HEADERS += main_window.h \
     interface.h \
     footer.h \
     titlebar.h \
-    player.h \
     api/qqmusic_api.h \
     widgets/search_page.h
 
@@ -27,7 +26,6 @@ SOURCES += main.cpp main_window.cpp \
     interface.cpp \
     footer.cpp \
     titlebar.cpp \
-    player.cpp \
     api/qqmusic_api.cpp \
     widgets/search_page.cpp
 
