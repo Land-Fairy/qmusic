@@ -10,16 +10,30 @@ int main(int argc, char *argv[])
 {
     DApplication::loadDXcbPlugin();
     DApplication app(argc, argv);
+
     app.setTheme("light");
 
-    MainWindow w;
-    w.show();
+    const QString acknowledgementLink = "https://github.com/rekols";
 
-    w.setMinimumSize(qApp->desktop()->width() / 1.5, qApp->desktop()->height() / 1.4);
+    if (app.setSingleInstance("qq-music")) {
+        app.setApplicationVersion("0.1");
+        app.setProductName("QQ音乐");
+        app.setProductIcon(QPixmap::fromImage(QImage(":/images/logo.png")));
+        app.setApplicationDescription(DApplication::translate("MainWindow", "本项目代码不用于商用，仅限研究和学习使用.") + "\n");
+        app.setApplicationAcknowledgementPage(acknowledgementLink);
+        app.setWindowIcon(QIcon(":/images/logo.png"));
 
-    Dtk::Widget::moveToCenter(&w);
+        MainWindow w;
+        w.show();
+        w.setWindowTitle("QQ音乐");
+        w.setMinimumSize(qApp->desktop()->width() / 1.5, qApp->desktop()->height() / 1.4);
 
-    qApp->setStyleSheet(Utils::getQssContent(":/qss/style.qss"));
+        Dtk::Widget::moveToCenter(&w);
 
-    return app.exec();
+        qApp->setStyleSheet(Utils::getQssContent(":/qss/style.qss"));
+
+        return app.exec();
+    }
+
+    return 0;
 }

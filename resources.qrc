@@ -2,7 +2,6 @@
 <RCC version="1.0">
     <qresource prefix="/">
         <file>qss/style.qss</file>
-        <file>images/logo.tiff</file>
         <file>images/next-normal.png</file>
         <file>images/next-hover.png</file>
         <file>images/next-press.png</file>
@@ -16,12 +15,11 @@
         <file>images/previous-hover.png</file>
         <file>images/previous-press.png</file>
         <file>images/gedan_cover_default.png</file>
-
         <file>images/mute.png</file>
         <file>images/volume-normal.png</file>
         <file>images/volume-hover.png</file>
-
         <file>images/mute.tiff</file>
         <file>images/volume.tiff</file>
+        <file>images/logo.png</file>
     </qresource>
 </RCC>

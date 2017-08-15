@@ -3,9 +3,11 @@ QToolBar {
 }
 QToolBar::separator {
     height: 1px;
-    background-color: #E2E2E2;
+    background-color: #BFBFBF;
     margin-top: 10px;
     margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 QToolButton {
     border: none;
