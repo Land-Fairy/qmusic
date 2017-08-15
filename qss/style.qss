@@ -23,7 +23,7 @@ QToolButton:checked {
     border-right: 3px solid #00C17F;
     border-top: none;
     border-bottom: none;
-    background-color: #00C17F;
+    background-color: #30C27C;
     color: #FFFFFF;
     font-size: 15px;
 }
@@ -32,12 +32,12 @@ QSlider::add-page:Horizontal {
     background-color: #F6F6F6;
 }
 QSlider::sub-page:Horizontal {
-    background-color: rgb(0, 193, 127);
+    background-color: #30C27C;
 }
 QSlider::groove:Horizontal {
     background: transparent;
 }
 QSlider::handle:Horizontal {
     height: 30px;
-    width:8px;
+    width: 8px;
 }

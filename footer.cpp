@@ -18,6 +18,10 @@ Footer::Footer(QWidget *parent)
     duration = new QLabel("00:00");;
     position = new QLabel("/00:00");;
 
+    display->setStyleSheet("QLabel { color: #565656; }");
+    duration->setStyleSheet("QLabel { color: #565656; }");
+    position->setStyleSheet("QLabel { color: #565656; }");
+
     volumeButton->setNormalPic(":/images/volume-normal.png");
     cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
@@ -25,7 +29,7 @@ Footer::Footer(QWidget *parent)
     duration->setVisible(false);
     display->setVisible(false);
 
-    slider->setFixedHeight(7);
+    slider->setFixedHeight(5);
     slider->setFixedWidth(parentWidget()->width());
 
     hlayout->addWidget(display);
@@ -42,9 +46,8 @@ Footer::Footer(QWidget *parent)
     layout->addWidget(playButton);
     layout->addWidget(nextButton);
     layout->addSpacing(30);
-    layout->addStretch();
     layout->addWidget(cover);
-    layout->addSpacing(20);
+    layout->addSpacing(10);
     layout->addLayout(vlayout);
     layout->addStretch();
     layout->addSpacing(20);
