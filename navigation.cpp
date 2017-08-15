@@ -15,10 +15,24 @@ Navigation::Navigation(QWidget *parent)
 
     toolBar->setOrientation(Qt::Vertical);
     layout->setMargin(0);
+    layout->setSpacing(0);
 
     QStringList list;
     list << QStringLiteral("音乐库");
     list << QStringLiteral("播放列表");
+
+    QLabel *loginLogo = new QLabel();
+    loginLogo->setPixmap(QPixmap(":/images/login.png").scaled(70, 70));
+    loginLogo->setFixedSize(70, 70);
+    QLabel *loginLabel = new QLabel("登录");
+    loginLabel->setFixedHeight(20);
+
+    layout->addSpacing(20);
+    layout->addWidget(loginLogo, 0, Qt::AlignHCenter);
+    layout->addSpacing(10);
+    layout->addWidget(loginLabel, 0, Qt::AlignHCenter);
+    layout->addSpacing(20);
+    layout->addWidget(toolBar);
 
     QButtonGroup *group = new QButtonGroup();
 
@@ -57,8 +71,6 @@ Navigation::Navigation(QWidget *parent)
             btn->setChecked(true);
     }
 
-    layout->addWidget(toolBar);
-
     connect(group, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
 }
 
@@ -70,7 +82,7 @@ void Navigation::paintEvent(QPaintEvent *)
     painter.setBrush(QColor("#F9F9F9"));
     painter.drawRect(rect());
 
-    painter.setBrush(QColor("#E2E2E2"));
+    painter.setBrush(QColor("#EFEFEF"));
     painter.drawRect(QRect(width() - 1, 0, 1, height()));
 }
 

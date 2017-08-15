@@ -21,5 +21,6 @@
         <file>images/mute.tiff</file>
         <file>images/volume.tiff</file>
         <file>images/logo.png</file>
+        <file>images/login.png</file>
     </qresource>
 </RCC>
