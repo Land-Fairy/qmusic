@@ -33,7 +33,6 @@ MainWindow::MainWindow(QWidget *parent)
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->addLayout(hlayout);
-    layout->addWidget(footer->slider);
     layout->addWidget(footer);
 
     mainWidget->setLayout(layout);

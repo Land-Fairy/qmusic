@@ -28,10 +28,6 @@ QToolButton:checked {
     font-size: 15px;
 }
 
-QSlider {
-    border-top: 1px solid #E2E2E2;
-    border-bottom: 1px solid #E2E2E2;
-}
 QSlider::add-page:Horizontal {
     background-color: #F6F6F6;
 }

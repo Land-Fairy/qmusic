@@ -26,31 +26,30 @@ Footer::Footer(QWidget *parent)
     display->setVisible(false);
 
     slider->setFixedHeight(7);
+    slider->setFixedWidth(parentWidget()->width());
 
+    hlayout->addWidget(display);
+    hlayout->addStretch();
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
-    hlayout->addStretch();
 
     vlayout->addStretch();
-    vlayout->addWidget(display);
     vlayout->addLayout(hlayout);
+    vlayout->addWidget(slider);
     vlayout->addStretch();
 
+    layout->addWidget(prevButton);
+    layout->addWidget(playButton);
+    layout->addWidget(nextButton);
+    layout->addSpacing(30);
+    layout->addStretch();
     layout->addWidget(cover);
-    layout->addSpacing(10);
+    layout->addSpacing(20);
     layout->addLayout(vlayout);
     layout->addStretch();
-    layout->addWidget(prevButton);
-    layout->addSpacing(10);
-    layout->addWidget(playButton);
-    layout->addSpacing(10);
-    layout->addWidget(nextButton);
-    layout->addStretch();
+    layout->addSpacing(20);
     layout->addWidget(volumeButton);
-    layout->addWidget(new QLabel("哈哈哈"));
-    layout->addWidget(new QLabel("哈哈哈"));
-    layout->addWidget(new QLabel("哈哈哈"));
-    layout->addSpacing(10);
+    layout->addSpacing(20);
 
     setFixedHeight(70);
 }
@@ -60,9 +59,9 @@ void Footer::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#F6F6F6"));
+    painter.setBrush(QColor("#FFFFFF"));
     painter.drawRect(rect());
 
-    //painter.setBrush(QColor("#E2E2E2"));
-    //painter.drawRect(QRect(0, 0, rect().width(), 1));
+    painter.setBrush(QColor("#E2E2E2"));
+    painter.drawRect(QRect(0, 0, rect().width(), 1));
 }
