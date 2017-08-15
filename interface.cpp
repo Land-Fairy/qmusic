@@ -15,6 +15,6 @@ void InterFace::paintEvent(QPaintEvent *)
     QPainter painter(this);
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#EDEDED"));
+    painter.setBrush(QColor("#FFFFFF"));
     painter.drawRect(rect());
 }

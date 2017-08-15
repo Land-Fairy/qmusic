@@ -17,7 +17,8 @@ Navigation::Navigation(QWidget *parent)
     layout->setMargin(0);
 
     QStringList list;
-    list << QStringLiteral("音乐库")<< QStringLiteral("播放列表");
+    list << QStringLiteral("音乐库");
+    list << QStringLiteral("播放列表");
 
     QButtonGroup *group = new QButtonGroup();
 

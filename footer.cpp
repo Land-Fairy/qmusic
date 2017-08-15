@@ -15,47 +15,49 @@ Footer::Footer(QWidget *parent)
     slider = new QSlider(Qt::Horizontal);
     cover = new QLabel();
     display = new QLabel("");
-    duration = new QLabel("00:00");;
-    position = new QLabel("/00:00");;
+    duration = new QLabel(" / 00:00");;
+    position = new QLabel("00:00");;
 
-    display->setStyleSheet("QLabel { color: #565656; }");
-    duration->setStyleSheet("QLabel { color: #565656; }");
-    position->setStyleSheet("QLabel { color: #565656; }");
+    display->setVisible(false);
+    duration->setVisible(false);
+    position->setVisible(false);
+
+    display->setStyleSheet("QLabel { color: #353535; }");
+    duration->setStyleSheet("QLabel { color: #353535; }");
+    position->setStyleSheet("QLabel { color: #353535; }");
 
     volumeButton->setNormalPic(":/images/volume-normal.png");
     cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
-    position->setVisible(false);
-    duration->setVisible(false);
-    display->setVisible(false);
+    slider->setFixedHeight(4);
 
-    slider->setFixedHeight(5);
-    slider->setFixedWidth(parentWidget()->width() - (parentWidget()->width() / 3));
-
-    hlayout->addWidget(display);
-    hlayout->addStretch();
+    hlayout->setContentsMargins(0, 0, 0, 0);
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
+    hlayout->addStretch();
 
-    vlayout->setMargin(0);
     vlayout->addStretch();
+    vlayout->addWidget(display);
     vlayout->addLayout(hlayout);
-    vlayout->addWidget(slider);
     vlayout->addStretch();
 
-    layout->addWidget(prevButton);
-    layout->addWidget(playButton);
-    layout->addWidget(nextButton);
-    layout->addSpacing(30);
+    layout->setSpacing(0);
+    layout->setMargin(0);
+    layout->addSpacing(10);
     layout->addWidget(cover);
     layout->addSpacing(10);
     layout->addLayout(vlayout);
     layout->addStretch();
-    layout->addSpacing(20);
+    layout->addWidget(prevButton);
+    layout->addSpacing(10);
+    layout->addWidget(playButton);
+    layout->addSpacing(10);
+    layout->addWidget(nextButton);
+    layout->addStretch();
     layout->addWidget(volumeButton);
-    layout->addSpacing(20);
+    layout->addSpacing(30);
 
-    setFixedHeight(70);
+    setFixedHeight(65);
 }
 
 void Footer::paintEvent(QPaintEvent *)
@@ -66,6 +68,6 @@ void Footer::paintEvent(QPaintEvent *)
     painter.setBrush(QColor("#FFFFFF"));
     painter.drawRect(rect());
 
-    painter.setBrush(QColor("#E2E2E2"));
+    painter.setBrush(QColor("#EAEAEA"));
     painter.drawRect(QRect(0, 0, rect().width(), 1));
 }
