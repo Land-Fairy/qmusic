@@ -70,6 +70,9 @@ void Navigation::paintEvent(QPaintEvent *)
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor("#F9F9F9"));
     painter.drawRect(rect());
+
+    painter.setBrush(QColor("#E2E2E2"));
+    painter.drawRect(QRect(width() - 1, 0, 1, height()));
 }
 
 void Navigation::buttonClicked(int index)

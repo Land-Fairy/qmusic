@@ -31,9 +31,10 @@ private:
     QQMusicAPI *api;
     Player *player;
 
-    QList<QString> names;
-    QList<QString> songUrls;
-    QList<QString> imageUrls;
+    QStringList names;
+    QStringList songUrls;
+    QString prevUrils;
+    QStringList imageUrls;
 };
 
 #endif

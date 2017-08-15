@@ -36,28 +36,30 @@ MainWindow::MainWindow(QWidget *parent)
 
     /* search event*/
     connect(tb->searchEdit, &QLineEdit::returnPressed, this, [=]{
+        names.clear();
+        songUrls.clear();
+        imageUrls.clear();
+
         interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
 
-        if (!names.isEmpty())
-            names.clear();
-        if (!songUrls.isEmpty())
-            songUrls.clear();
-        if (!imageUrls.isEmpty())
-            imageUrls.clear();
     });
 
     connect(api, &QQMusicAPI::searchList, this, [=](QString name, QString url, QString image_url){
-        interFace->searchPage->list->addItem(name);
-
         names << name;
         songUrls << url;
         imageUrls << image_url;
+
+        interFace->searchPage->list->addItem(name);
     });
 
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
-        player->setMedia(QUrl(songUrls.at(interFace->searchPage->list->currentRow())));
-        //player->play();
+        int current = interFace->searchPage->list->currentRow();
+
+        if (!songUrls[current].isEmpty())
+            prevUrils = songUrls.at(current);
+
+        player->setMedia(QUrl(prevUrils));
     });
 
     /* MediaPlay event*/
