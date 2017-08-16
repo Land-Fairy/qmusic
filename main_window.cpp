@@ -38,7 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->addLayout(hlayout);
-    layout->addWidget(footer->slider);
     layout->addWidget(footer);
 
     mainWidget->setLayout(layout);
@@ -71,6 +70,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
+
+        footer->cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
         QEventLoop loop;
         QUrl url = imageUrls.at(current);

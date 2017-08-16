@@ -32,15 +32,18 @@ Footer::Footer(QWidget *parent)
     cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
     slider->setFixedHeight(4);
+    slider->setFixedWidth(parentWidget()->width() / 1.5);
 
     hlayout->setContentsMargins(0, 0, 0, 0);
+    hlayout->addWidget(display);
+    hlayout->addStretch();
     hlayout->addWidget(position);
     hlayout->addWidget(duration);
-    hlayout->addStretch();
 
     vlayout->addStretch();
-    vlayout->addWidget(display);
     vlayout->addLayout(hlayout);
+    vlayout->addSpacing(10);
+    vlayout->addWidget(slider);
     vlayout->addStretch();
 
     layout->setSpacing(0);
