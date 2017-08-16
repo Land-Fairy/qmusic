@@ -34,8 +34,6 @@ QQMusicAPI::QQMusicAPI(QObject *parent)
         : QObject(parent)
 {
     http = new QNetworkAccessManager(this);
-
-    getKey();
 }
 
 void QQMusicAPI::search(const QString &keyword, const int &page)
@@ -52,6 +50,8 @@ void QQMusicAPI::search(const QString &keyword, const int &page)
     query.addQueryItem("n", "50");
     query.addQueryItem("w", keyword);
     url.setQuery(query.toString(QUrl::FullyEncoded));
+
+    getKey();
 
     QNetworkRequest request(url);
     QNetworkReply *reply = http->get(request);

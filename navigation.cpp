@@ -27,10 +27,10 @@ Navigation::Navigation(QWidget *parent)
     QLabel *loginLabel = new QLabel("登录");
     loginLabel->setFixedHeight(20);
 
-    layout->addSpacing(20);
-    layout->addWidget(loginLogo, 0, Qt::AlignHCenter);
-    layout->addSpacing(10);
-    layout->addWidget(loginLabel, 0, Qt::AlignHCenter);
+    //layout->addSpacing(20);
+    //layout->addWidget(loginLogo, 0, Qt::AlignHCenter);
+    //layout->addSpacing(10);
+    //layout->addWidget(loginLabel, 0, Qt::AlignHCenter);
     layout->addSpacing(20);
     layout->addWidget(toolBar);
 
