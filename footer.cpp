@@ -18,6 +18,8 @@ Footer::Footer(QWidget *parent)
     duration = new QLabel(" / 00:00");;
     position = new QLabel("00:00");;
 
+    display->setWordWrap(true);
+
     display->setVisible(false);
     duration->setVisible(false);
     position->setVisible(false);
@@ -43,16 +45,16 @@ Footer::Footer(QWidget *parent)
 
     layout->setSpacing(0);
     layout->setMargin(0);
-    layout->addSpacing(10);
-    layout->addWidget(cover);
-    layout->addSpacing(10);
-    layout->addLayout(vlayout);
-    layout->addStretch();
+    layout->addSpacing(15);
     layout->addWidget(prevButton);
     layout->addSpacing(10);
     layout->addWidget(playButton);
     layout->addSpacing(10);
     layout->addWidget(nextButton);
+    layout->addSpacing(25);
+    layout->addWidget(cover);
+    layout->addSpacing(10);
+    layout->addLayout(vlayout);
     layout->addStretch();
     layout->addWidget(volumeButton);
     layout->addSpacing(30);

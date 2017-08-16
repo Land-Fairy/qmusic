@@ -18,7 +18,7 @@ Navigation::Navigation(QWidget *parent)
     layout->setSpacing(0);
 
     QStringList list;
-    list << QStringLiteral("音乐库");
+    list << QStringLiteral("搜索");
     list << QStringLiteral("播放列表");
 
     QLabel *loginLogo = new QLabel();
