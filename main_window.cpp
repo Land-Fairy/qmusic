@@ -152,7 +152,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     /* footer slider event*/
     connect(footer->slider, &QSlider::sliderMoved, this, [=] {
-        player->setPosition(footer->slider->value());
+        //player->setPosition(footer->slider->value());
     });
     connect(footer->slider, &QSlider::sliderPressed, this, [=] {
         player->setPosition(footer->slider->value());
