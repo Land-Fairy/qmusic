@@ -31,7 +31,7 @@ QToolButton:checked {
 }
 
 QSlider::add-page:Horizontal {
-    background-color: #F9F9F9;
+    background-color: #E1E1E1;
 }
 QSlider::sub-page:Horizontal {
     background-color: #30C27C;
