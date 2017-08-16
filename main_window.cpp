@@ -50,6 +50,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     /* search event*/
     connect(tb->searchEdit, &DSearchEdit::returnPressed, this, [=]{
+        if (tb->searchEdit->text().isEmpty())
+            return;
+
         names.clear();
         songUrls.clear();
         imageUrls.clear();

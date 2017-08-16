@@ -42,7 +42,7 @@ Footer::Footer(QWidget *parent)
 
     vlayout->addStretch();
     vlayout->addLayout(hlayout);
-    vlayout->addSpacing(10);
+    vlayout->addSpacing(5);
     vlayout->addWidget(slider);
     vlayout->addStretch();
 
