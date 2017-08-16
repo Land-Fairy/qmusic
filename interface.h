@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QStackedLayout>
 #include "./widgets/search_page.h"
+#include "./widgets/list_page.h"
 
 class InterFace : public QWidget
 {
@@ -12,13 +13,12 @@ class InterFace : public QWidget
 public:
     InterFace(QWidget *parent = 0);
 
+    QStackedLayout *layout;
     SearchPage *searchPage;
+    ListPage *listPage;
 
 protected:
     void paintEvent(QPaintEvent *);
-
-private:
-    QStackedLayout *layout;
 };
 
 #endif // INTERFACE_H

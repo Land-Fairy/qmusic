@@ -6,8 +6,12 @@ InterFace::InterFace(QWidget *parent)
 {
     layout = new QStackedLayout(this);
     searchPage = new SearchPage();
+    listPage = new ListPage();
 
     layout->addWidget(searchPage);
+    layout->addWidget(listPage);
+
+    layout->setCurrentIndex(0);
 }
 
 void InterFace::paintEvent(QPaintEvent *)

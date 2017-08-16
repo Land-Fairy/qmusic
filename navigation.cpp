@@ -88,14 +88,12 @@ void Navigation::paintEvent(QPaintEvent *)
 
 void Navigation::buttonClicked(int index)
 {
-    qDebug() << index;
-
     switch (index) {
     case -2:
-        qDebug() << "1";
+        indexChanged(0);
         break;
     case -3:
-        qDebug() << "2";
+        indexChanged(1);
         break;
     }
 }

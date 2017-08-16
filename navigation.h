@@ -21,6 +21,9 @@ private:
 
 private slots:
     void buttonClicked(int index);
+
+signals:
+    void indexChanged(int current);
 };
 
 #endif // NAVIGATION_H

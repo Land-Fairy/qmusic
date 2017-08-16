@@ -39,6 +39,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(mainWidget);
 
+    connect(navigation, &Navigation::indexChanged, this, [=](int current){
+        interFace->layout->setCurrentIndex(current);
+    });
+
     /* search event*/
     connect(tb->searchEdit, &DSearchEdit::returnPressed, this, [=]{
         names.clear();
