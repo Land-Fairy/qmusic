@@ -2,6 +2,11 @@
 #include <dtitlebar.h>
 #include <QTime>
 #include <QDebug>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QEventLoop>
+#include <QJsonDocument>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent)
@@ -16,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     api = new QQMusicAPI(this);
     player = new QMediaPlayer(this);
     playlist = new QMediaPlaylist();
+    http = new QNetworkAccessManager(this);
 
     player->setPlaylist(playlist);
 
@@ -65,6 +71,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
+
+        QEventLoop loop;
+        QUrl url = imageUrls.at(current);
+        QNetworkRequest request(url);
+        QNetworkReply *reply = http->get(request);
+        connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+        loop.exec();
+        QPixmap pixmap;
+        pixmap.loadFromData(reply->readAll());
+        footer->cover->setPixmap(pixmap.scaled(50, 50));
 
         playlist->setCurrentIndex(current);
     });

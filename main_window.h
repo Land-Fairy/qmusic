@@ -11,6 +11,8 @@
 #include "titlebar.h"
 #include "./api/qqmusic_api.h"
 
+class QNetworkAccessManager;
+
 DWIDGET_USE_NAMESPACE
 
 class MainWindow : public DMainWindow
@@ -36,6 +38,8 @@ private:
     QStringList names;
     QStringList songUrls;
     QStringList imageUrls;
+
+    QNetworkAccessManager *http;
 };
 
 #endif
