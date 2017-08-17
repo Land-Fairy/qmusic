@@ -1,6 +1,5 @@
 #include "navigation.h"
 #include <QButtonGroup>
-#include <QToolButton>
 #include <QDebug>
 #include <QPainter>
 #include <QLabel>
@@ -10,6 +9,8 @@ Navigation::Navigation(QWidget *parent)
 {
     layout = new QVBoxLayout(this);
     toolBar = new QToolBar();
+    btn1 = new QToolButton();
+    btn2 = new QToolButton();
 
     setFixedWidth(parentWidget()->width() / 3.5);
 
@@ -17,59 +18,55 @@ Navigation::Navigation(QWidget *parent)
     layout->setMargin(0);
     layout->setSpacing(0);
 
-    QStringList list;
-    list << QStringLiteral("搜索");
-    list << QStringLiteral("播放列表");
-
     QLabel *loginLogo = new QLabel();
     loginLogo->setPixmap(QPixmap(":/images/login.png").scaled(70, 70));
     loginLogo->setFixedSize(70, 70);
     QLabel *loginLabel = new QLabel("登录");
     loginLabel->setFixedHeight(20);
 
-    layout->addSpacing(20);
-    layout->addWidget(loginLogo, 0, Qt::AlignHCenter);
-    layout->addSpacing(10);
-    layout->addWidget(loginLabel, 0, Qt::AlignHCenter);
-    layout->addSpacing(20);
+    //layout->addSpacing(20);
+    //layout->addWidget(loginLogo, 0, Qt::AlignHCenter);
+    //layout->addSpacing(10);
+    //layout->addWidget(loginLabel, 0, Qt::AlignHCenter);
+    //layout->addSpacing(20);
     layout->addWidget(toolBar);
 
     QButtonGroup *group = new QButtonGroup();
 
-    for (int i=0; i<list.size(); ++i) {
-        if (i == 0) {
-            QLabel *label = new QLabel("在线音乐");
-            label->setStyleSheet("QLabel {"
-                                 "margin-top: 10px;"
-                                 "margin-bottom: 5px;"
-                                 "margin-left: 15px;"
-                                 "color: #A9A9A9;"
-                                 "}");
-            toolBar->addWidget(label);
-        }
+    QLabel *label = new QLabel("在线音乐");
+    label->setStyleSheet("QLabel {"
+                         "margin-top: 10px;"
+                         "margin-bottom: 5px;"
+                         "margin-left: 15px;"
+                         "color: #A9A9A9;"
+                         "}");
+    toolBar->addWidget(label);
 
-        if (i == 1) {
-            QLabel *label = new QLabel("我的音乐");
-            label->setStyleSheet("QLabel {"
-                                 "margin-top: 20px;"
-                                 "margin-bottom: 5px;"
-                                 "margin-left: 15px;"
-                                 "color: #A9A9A9;"
-                                 "}");
-            toolBar->addWidget(label);
-        }
+    btn1->setText("搜索");
+    btn1->setFixedHeight(30);
+    btn1->setFixedWidth(width());
+    btn1->setCheckable(true);
+    group->addButton(btn1);
+    toolBar->addWidget(btn1);
 
-        QToolButton *btn = new QToolButton();
-        btn->setText(list.at(i));
-        btn->setFixedHeight(30);
-        btn->setFixedWidth(width());
-        btn->setCheckable(true);
-        group->addButton(btn);
-        toolBar->addWidget(btn);
 
-        if (i == 0)
-            btn->setChecked(true);
-    }
+    QLabel *label2 = new QLabel("我的音乐");
+    label2->setStyleSheet("QLabel {"
+                         "margin-top: 20px;"
+                         "margin-bottom: 5px;"
+                         "margin-left: 15px;"
+                         "color: #A9A9A9;"
+                         "}");
+    toolBar->addWidget(label2);
+
+    btn2->setText("播放列表");
+    btn2->setFixedHeight(30);
+    btn2->setFixedWidth(width());
+    btn2->setCheckable(true);
+    group->addButton(btn2);
+    toolBar->addWidget(btn2);
+
+    btn1->setChecked(true);
 
     connect(group, SIGNAL(buttonClicked(int)), this, SLOT(buttonClicked(int)));
 }

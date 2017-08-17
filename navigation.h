@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QToolBar>
+#include <QToolButton>
 
 class Navigation : public QWidget
 {
@@ -11,6 +12,9 @@ class Navigation : public QWidget
 
 public:
     Navigation(QWidget *parent = 0);
+
+    QToolButton *btn1;
+    QToolButton *btn2;
 
 protected:
     void paintEvent(QPaintEvent *);

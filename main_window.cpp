@@ -53,6 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
         if (tb->searchEdit->text().isEmpty())
             return;
 
+        navigation->btn1->setChecked(true);
+        interFace->layout->setCurrentIndex(0);
+
         names.clear();
         songUrls.clear();
         imageUrls.clear();
