@@ -77,6 +77,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
 
+        footer->position->setVisible(false);
+        footer->duration->setVisible(false);
+        footer->display->setVisible(false);
         footer->cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
         QEventLoop loop;
