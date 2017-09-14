@@ -5,7 +5,7 @@
 QT += core gui widgets network multimedia
 
 TEMPLATE = app
-TARGET = qq-music
+TARGET = qmusic
 INCLUDEPATH += .
 CONFIG += c++11 link_pkgconfig
 PKGCONFIG += dtkwidget
