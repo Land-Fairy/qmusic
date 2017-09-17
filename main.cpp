@@ -4,10 +4,14 @@
 #include "main_window.h"
 #include "utils.h"
 
+#include <QDebug>
+
 DWIDGET_USE_NAMESPACE
 
 int main(int argc, char *argv[])
 {
+    qputenv("QT_SCALE_FACTOR", "1.35");
+
     DApplication::loadDXcbPlugin();
     DApplication app(argc, argv);
 
@@ -26,7 +30,7 @@ int main(int argc, char *argv[])
         MainWindow w;
         w.show();
         w.setWindowTitle("QQ音乐");
-        w.setFixedSize(qApp->desktop()->width() / 1.8, qApp->desktop()->height() / 1.7);
+        w.setFixedSize(800, 500);
 
         Dtk::Widget::moveToCenter(&w);
 
