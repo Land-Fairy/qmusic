@@ -4,8 +4,6 @@
 #include "main_window.h"
 #include "utils.h"
 
-#include <QDebug>
-
 DWIDGET_USE_NAMESPACE
 
 int main(int argc, char *argv[])
