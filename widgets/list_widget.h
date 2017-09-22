@@ -2,9 +2,7 @@
 #define LIST_WIDGET_H
 
 #include <QWidget>
-#include <QListView>
-
-class QStringListModel;
+#include <QListWidget>
 
 class ListWidget : public QWidget
 {
@@ -13,11 +11,10 @@ class ListWidget : public QWidget
 public:
     explicit ListWidget(QWidget *parent = nullptr);
 
-    void addMusic(const QString &name, const QString &artist);
+    void addMusic(const QString &title, const QString &artist);
 
 private:
-    QStringListModel *model;
-    QListView *listView;
+    QListWidget *listWidget;
 };
 
 #endif // LIST_WIDGET_H

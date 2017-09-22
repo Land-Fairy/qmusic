@@ -62,21 +62,18 @@ MainWindow::MainWindow(QWidget *parent)
         imageUrls.clear();
         playlist->clear();
 
-        interFace->searchPage->list->clear();
+        //interFace->searchPage->list->clear();
         api->search(tb->searchEdit->text(), 1);
     });
 
     /* searchFinished */
-    connect(api, &QQMusicAPI::searchList, this, [=](QString name, QString url, QString image_url){
-        names << name;
-        songUrls << url;
-        imageUrls << image_url;
+    connect(api, &QQMusicAPI::searchList, this, [=](QString songName, QString singerName, QString url, QString image_url){
         playlist->addMedia(QUrl(url));
 
-        interFace->searchPage->list->addItem(name);
+        interFace->searchPage->list->addMusic(songName, singerName);
     });
 
-    /*  */
+    /*
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
 
@@ -97,6 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         playlist->setCurrentIndex(current);
     });
+    */
 
     /* MediaPlay event*/
     connect(player, &QMediaPlayer::durationChanged, this, [=](qint64 duration) {

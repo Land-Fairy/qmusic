@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include <QListWidget>
+#include "list_widget.h"
 
 class SearchPage : public QWidget
 {
@@ -12,7 +12,7 @@ class SearchPage : public QWidget
 public:
     explicit SearchPage(QWidget *parent = 0);
 
-    QListWidget *list;
+    ListWidget *list;
 
 private:
     QVBoxLayout *layout;

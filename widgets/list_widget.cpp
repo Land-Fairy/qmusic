@@ -1,23 +1,22 @@
 #include "list_widget.h"
 #include <QVBoxLayout>
-#include <QStringListModel>
+#include <QListWidgetItem>
 #include "list_item.h"
 
 ListWidget::ListWidget(QWidget *parent)
     : QWidget(parent)
 {
     auto layout = new QVBoxLayout(this);
-    listView = new QListView;
-    model = new QStringListModel;
+    listWidget = new QListWidget;
 
-    listView->setModel(model);
-
-    layout->addWidget(listView);
+    layout->addWidget(listWidget);
 }
 
-void ListWidget::addMusic(const QString &name, const QString &artist)
+void ListWidget::addMusic(const QString &title, const QString &artist)
 {
-    model->insertRows(model->rowCount(), 1);
-    auto index = model->index(model->rowCount() - 1);
-    listView->setIndexWidget(index, new ListItem(model->rowCount(), name, artist));
+    QListWidgetItem *itemWidget = new QListWidgetItem(listWidget);
+    ListItem *item = new ListItem(title, artist);
+
+    itemWidget->setSizeHint(item->sizeHint());
+    listWidget->setItemWidget(itemWidget, item);
 }

@@ -4,7 +4,7 @@ SearchPage::SearchPage(QWidget *parent)
     : QWidget(parent)
 {
     layout = new QVBoxLayout(this);
-    list = new QListWidget();
+    list = new ListWidget();
 
     layout->addWidget(list);
 }

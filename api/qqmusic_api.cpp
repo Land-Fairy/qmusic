@@ -105,7 +105,7 @@ void QQMusicAPI::searchFinished()
             qDebug() << "album_cover: " << album_cover_small;
             qDebug() << "\n";
 
-            emit searchList(song_name + " - " + singer_name, "http://dl.stream.qqmusic.qq.com/M500" + song_mid + ".mp3?vkey=" + key +"&guid=85880580&fromtag=30", album_cover_small);
+            emit searchList(song_name, singer_name, "http://dl.stream.qqmusic.qq.com/M500" + song_mid + ".mp3?vkey=" + key +"&guid=85880580&fromtag=30", album_cover_small);
 
         }
 
