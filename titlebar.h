@@ -16,6 +16,9 @@ public:
 
     DSearchEdit *searchEdit;
 
+private:
+    QHBoxLayout *layout;
+
 };
 
 #endif // TITLEBAR_H

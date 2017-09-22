@@ -5,8 +5,6 @@ Footer::Footer(QWidget *parent)
     : QWidget(parent)
 {
     layout = new QHBoxLayout(this);
-    vlayout = new QVBoxLayout();
-    hlayout = new QHBoxLayout();
     prevButton = new DImageButton(":/images/previous-normal.png", ":/images/previous-hover.png",":/images/previous-press.png");
     playButton = new DImageButton(":/images/play-normal.png", ":/images/play-hover.png",":/images/play-press.png");
     pauseButton = new DImageButton(":/images/pause-normal.png", ":/images/pause-hover.png",":/images/pause-press.png");
@@ -15,7 +13,7 @@ Footer::Footer(QWidget *parent)
     slider = new QSlider(Qt::Horizontal);
     cover = new QLabel();
     display = new QLabel("");
-    duration = new QLabel(" / 00:00");;
+    duration = new QLabel("00:00");;
     position = new QLabel("00:00");;
 
     display->setWordWrap(true);
@@ -31,20 +29,8 @@ Footer::Footer(QWidget *parent)
     volumeButton->setNormalPic(":/images/volume-normal.png");
     cover->setPixmap(QPixmap(":/images/gedan_cover_default.png").scaled(50, 50));
 
-    slider->setFixedHeight(4);
+    slider->setFixedHeight(6);
     slider->setFixedWidth(parentWidget()->width() / 1.5);
-
-    hlayout->setContentsMargins(0, 0, 0, 0);
-    hlayout->addWidget(display);
-    hlayout->addStretch();
-    hlayout->addWidget(position);
-    hlayout->addWidget(duration);
-
-    vlayout->addStretch();
-    vlayout->addLayout(hlayout);
-    vlayout->addSpacing(5);
-    vlayout->addWidget(slider);
-    vlayout->addStretch();
 
     layout->setSpacing(0);
     layout->setMargin(0);
@@ -55,9 +41,12 @@ Footer::Footer(QWidget *parent)
     layout->addSpacing(10);
     layout->addWidget(nextButton);
     layout->addSpacing(25);
-    layout->addWidget(cover);
+    layout->addWidget(position);
+    layout->addWidget(slider);
+    layout->addWidget(duration);
+    //layout->addWidget(cover);
     layout->addSpacing(10);
-    layout->addLayout(vlayout);
+    //layout->addLayout(vlayout);
     layout->addStretch();
     layout->addWidget(volumeButton);
     layout->addSpacing(30);

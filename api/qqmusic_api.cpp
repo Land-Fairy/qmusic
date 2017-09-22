@@ -102,7 +102,7 @@ void QQMusicAPI::searchFinished()
 
             qDebug() << "http://dl.stream.qqmusic.qq.com/M500" + song_mid + ".mp3?vkey=" + key +"&guid=85880580&fromtag=30";
             qDebug() << QString("%1 - %2  %3").arg(song_name).arg(singer_name).arg(song_mid);
-             qDebug() << "album_cover: " << album_cover_small;
+            qDebug() << "album_cover: " << album_cover_small;
             qDebug() << "\n";
 
             emit searchList(song_name + " - " + singer_name, "http://dl.stream.qqmusic.qq.com/M500" + song_mid + ".mp3?vkey=" + key +"&guid=85880580&fromtag=30", album_cover_small);

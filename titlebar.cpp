@@ -1,11 +1,10 @@
 #include "titlebar.h"
 #include <QLabel>
-#include <QFontMetrics>
 
 TitleBar::TitleBar(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *layout = new QHBoxLayout(this);
+    layout = new QHBoxLayout(this);
     searchEdit = new DSearchEdit();
 
     searchEdit->setPlaceHolder("搜索");

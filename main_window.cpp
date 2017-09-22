@@ -49,6 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     /* search event*/
+    /* searchEditPressed */
     connect(tb->searchEdit, &DSearchEdit::returnPressed, this, [=]{
         if (tb->searchEdit->text().isEmpty())
             return;
@@ -65,6 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
         api->search(tb->searchEdit->text(), 1);
     });
 
+    /* searchFinished */
     connect(api, &QQMusicAPI::searchList, this, [=](QString name, QString url, QString image_url){
         names << name;
         songUrls << url;
@@ -74,6 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
         interFace->searchPage->list->addItem(name);
     });
 
+    /*  */
     connect(interFace->searchPage->list, &QListWidget::doubleClicked, this, [=]{
         int current = interFace->searchPage->list->currentRow();
 
@@ -101,7 +104,7 @@ MainWindow::MainWindow(QWidget *parent)
         time = time.addMSecs(duration);
 
         footer->slider->setRange(0, duration);
-        footer->duration->setText("/ " + time.toString("mm:ss"));
+        footer->duration->setText(time.toString("mm:ss"));
     });
 
     connect(player, &QMediaPlayer::positionChanged, this, [=](qint64 position) {

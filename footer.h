@@ -33,8 +33,6 @@ protected:
 
 private:
     QHBoxLayout *layout;
-    QVBoxLayout *vlayout;
-    QHBoxLayout *hlayout;
 };
 
 #endif // FOOTER_H

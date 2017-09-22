@@ -43,3 +43,4 @@ QSlider::handle:Horizontal {
     height: 30px;
     width: 8px;
 }
+
