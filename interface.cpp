@@ -6,7 +6,7 @@ InterFace::InterFace(QWidget *parent)
 {
     layout = new QStackedLayout(this);
     searchPage = new SearchPage();
-    listPage = new ListPage();
+    listPage = new QListWidget();
 
     layout->addWidget(searchPage);
     layout->addWidget(listPage);

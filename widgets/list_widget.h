@@ -13,6 +13,8 @@ class ListWidget : public QWidget
 public:
     explicit ListWidget(QWidget *parent = nullptr);
 
+    void addMusic(const QString &name, const QString &artist);
+
 private:
     QStringListModel *model;
     QListView *listView;

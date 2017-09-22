@@ -19,7 +19,8 @@ HEADERS += main_window.h \
     titlebar.h \
     api/qqmusic_api.h \
     widgets/search_page.h \
-    widgets/list_widget.h
+    widgets/list_widget.h \
+    widgets/list_item.h
 
 SOURCES += main.cpp main_window.cpp \
     navigation.cpp \
@@ -29,6 +30,7 @@ SOURCES += main.cpp main_window.cpp \
     titlebar.cpp \
     api/qqmusic_api.cpp \
     widgets/search_page.cpp \
-    widgets/list_widget.cpp
+    widgets/list_widget.cpp \
+    widgets/list_item.cpp
 
 RESOURCES += resources.qrc

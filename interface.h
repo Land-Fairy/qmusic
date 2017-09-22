@@ -3,8 +3,8 @@
 
 #include <QWidget>
 #include <QStackedLayout>
+#include <QListWidget>
 #include "./widgets/search_page.h"
-#include "./widgets/list_page.h"
 
 class InterFace : public QWidget
 {
@@ -15,7 +15,7 @@ public:
 
     QStackedLayout *layout;
     SearchPage *searchPage;
-    ListPage *listPage;
+    QListWidget *listPage;
 
 protected:
     void paintEvent(QPaintEvent *);
